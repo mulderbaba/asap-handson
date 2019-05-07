@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.atlassian.asap</groupId>
+    <artifactId>asap-server-jersey-example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+
+        <atlassian-asap.version>2.21.10</atlassian-asap.version>
+        <jersey.version>2.28</jersey.version>
+        <payaramicro.maven.plugin.version>1.0.4</payaramicro.maven.plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.atlassian.asap</groupId>
+            <artifactId>asap-server-jersey2</artifactId>
+            <version>${atlassian-asap.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>fish.payara.maven.plugins</groupId>
+                <artifactId>payara-micro-maven-plugin</artifactId>
+                <version>${payaramicro.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>bundle</id>
+                        <goals>
+                            <goal>bundle</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>start</id>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <useUberJar>true</useUberJar>
+<!--
+                    <javaCommandLineOptions>
+                        <option>
+                            <value>-Xdebug</value>
+                        </option>
+                        <option>
+                            <key>-Xrunjdwp:transport</key>
+                            <value>dt_socket,server=y,suspend=y,address=5005</value>
+                        </option>
+                    </javaCommandLineOptions>
+-->
+                    <commandLineOptions>
+                        <option>
+                            <key>--port</key>
+                            <value>9090</value>
+                        </option>
+                    </commandLineOptions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

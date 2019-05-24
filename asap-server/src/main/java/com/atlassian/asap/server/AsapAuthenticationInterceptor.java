@@ -34,7 +34,6 @@ public class AsapAuthenticationInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     private JwtValidator jwtValidator;
 
-    // TODO return value toparlama
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (handler instanceof HandlerMethod) {

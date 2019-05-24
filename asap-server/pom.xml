@@ -2,6 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.atlassian.asap</groupId>
     <artifactId>asap-server</artifactId>
@@ -12,8 +13,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <atlassian-asap.version>2.21.10</atlassian-asap.version>
-        <spring.version>5.1.6.RELEASE</spring.version>
         <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+        <spring.version>5.1.6.RELEASE</spring.version>
 
         <junit-jupiter.version>5.4.2</junit-jupiter.version>
         <mockito.version>2.27.0</mockito.version>

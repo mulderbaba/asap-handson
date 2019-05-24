@@ -24,7 +24,7 @@ public class Main {
                 .issuer("opsgenie-user-service")
                 .audience("jira-user-service")
                 .build(), new URIBuilder().setPath("classpath:///").build()));
-
+    
         Client client = JerseyClientBuilder.createClient(config);
 
         WebTarget target = client.target(ASAP_JERSEY_ENDPOINT);

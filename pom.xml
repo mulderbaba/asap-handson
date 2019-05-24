@@ -14,11 +14,11 @@
         <module>asap-client</module>
         <module>asap-server</module>
 
-        <!-- Spring based TODO -->
+        <!-- Spring boot based example application that use asap-client and asap-server under the hood -->
         <module>asap-server-spring-example</module>
         <module>asap-client-spring-example</module>
 
-        <!-- Jersey based TODO -->
+        <!-- Jersey based example server / client applications -->
         <module>asap-client-jersey-example</module>
         <module>asap-server-jersey-example</module>
     </modules>
